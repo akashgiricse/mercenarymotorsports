@@ -20,13 +20,21 @@
         font-family: 'Poiret One', cursive;
       }
 
+      .container {
+      	padding-top: 4rem;
+      }
+
+      #navContainer {
+      	padding-top: 0;
+      }
+
     </style>
 
     <title>Home - Mercenary Motorsports</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container" id="navContainer">
         <a href="#" class="navbar-brand"><img src="img/mercenarylogo.jpg" class="rounded mx-3">Mercenary Motorsports</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,7 +67,7 @@
       </div>
     </nav>
     <div class="jumbotron">
-      <div class="container">
+      <div class="container" id="mercenaryvideo">
         <div class="row align-items-center">
           <div class="col-12 col-lg-8 mb-3 mb-lg-0">
             <div class="embed-responsive embed-responsive-16by9">
@@ -355,7 +363,7 @@
     </div>
 
     <hr>
-    <footer class="bg-light">
+    <footer class="bg-light small">
       <div class="container py-3 py-sm-5">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
@@ -400,9 +408,9 @@
           </div>
         </div>
         <ul class="list-inline mt-2 mb-0 text-center">
-          <li class="list-inline-item">&copy; 2018 Mercenary Motorsports</li>
+          <li class="list-inline-item">&copy; 2018 Mercenary Motorsports.</li>
           <li class="list-inline-item">All rights reserved.</li>
-          <li class="list-inline-item">Page designed by <a href="https://akashgiricse.github.io/"><b>Akash Giri</b></a></li>
+          <li class="list-inline-item">Website designed by <a href="https://akashgiricse.github.io/"><b>Akash Giri</b></a></li>
         </ul>
       </div>
     </footer>
@@ -410,6 +418,7 @@
     <!-- jQuery first, then Bootstrap JS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA=" crossorigin="anonymous"></script>
 
 
     <script type="text/javascript">
