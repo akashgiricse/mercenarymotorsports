@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <title>Mercenary Motorsports</title>
 
 
@@ -36,41 +38,89 @@
       </div>
     </nav>
 
-    <div class="jumbotron">
-      <h1 class="text-center text-success mt-4"><strong>Thank you for giving us a positive response</strong></h1>
-      <h2 class="text-center">You can back us through the following payment methods</h2>
-      
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+        <h1 class="mb-3 text-center">Please fill out the following form</h1>
+        <form class="mb-3" id="test-form">
 
-      <div class="card-group">
-          <div class="card mx-2">
-            <img class="card-img-top border" src="img/FinalPTM.jpg" alt="Card image">
-            <div class="card-body">
-              <h4 class="card-title"><strong>Via PayTm</strong></h4>
-              <p class="card-text">Please scan the above QR code to make payment using your PayTm account.</p>
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" name="Name" class="form-control" placeholder="Full Name" id="name" required="">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" name="Address" class="form-control" placeholder="Address" id="address">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="Phone" class="form-control" placeholder="Phone" id="address" required="">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="Email" class="form-control" placeholder="example@email.com" id="email" required="">
+          </div>
+          <div>
+            <label>Would you like to pledge anonymously?</label>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" name="Anon" id="exampleRadios1" class="form-check-input" value="Yes">
+                Yes
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input type="radio" name="Anon" id="exampleRadios2" class="form-check-input" value="No" checked="">
+                No
+              </label>
             </div>
           </div>
-          <div class="card mx-2">
-            <img class="card-img-top border" src="img/FinalUPI.jpg" alt="Card image">
-            <div class="card-body">
-              <h4 class="card-title"><strong>Via UPI</strong></h4>
-              <p class="card-text">Please scan the above QR code to make payment through UPI.</p>
-            </div>
-          </div>
-          <div class="card mx-2">
-            <img class="card-img-top border" src="img/bank.jpg" alt="Card image">
-            <div class="card-body">
-              <h4 class="card-title"><strong>Via Bank</strong></h4>
-              <ul>
-                <li><strong>Name: Brijesh Yadav</strong></li>
-                <li>Account No. 3566138966</li>
-                <li>IFSC: CBIN0283295</li>
-                <li>Address: BIET Jhansi Branch</li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
+          <div>
+            <input type="hidden" name="Category" value="BACKER">
+          </div>
+
+          <div class="form-group">
+            <label for="Name">Feedback:</label>
+            <input type="text" name="FeedBack" class="form-control" placeholder="Your message" id="name">
+          </div>
+
+          
+            <div>
+
+          <button type="submit" id="submit" class="btn btn-primary btn-block mb-3">Submit</button>
+  </div>
+        </form>
+
+        <script type="text/javascript">
+            var $form = $('form#test-form'),
+              url = 'https://script.google.com/macros/s/AKfycbxOx71h9DrE52iRsvuI92PG0258VIgZtq_fLwSrU7VylErGAp0/exec'
+
+
+            $('#submit').on('click', function(e) {
+            e.preventDefault();
+            var jqxhr = $.ajax({
+              url: url,
+              method: "GET",
+              dataType: "json",
+              data: $form.serialize()
+            });
+            setTimeout(function(){
+
+          window.location='payment_methods.html';
+          },1000); 
+            
+
+          })
+        </script>
+
+
+      </div>
     </div>
+  </div>
+</div>
 
 
 
@@ -134,6 +184,7 @@
         $(function () {
           var scroll = new SmoothScroll('a[href*="#container-"]');
         });
+
     </script>
 </body>
 </html>
